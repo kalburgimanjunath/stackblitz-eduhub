@@ -65,11 +65,18 @@ const Footer = () => {
     'Resources',
   ];
   return (
-    <div>
+    <div className="footer">
       {links &&
         links.map((item) => {
           return <div>{item}</div>;
         })}
+      <div>
+        <span>Twitter</span>
+        <span>Instagram</span>
+        <span>Facebook</span>
+        <span>Youtube</span>
+      </div>
+      <div>2023 EduHub,All rights reserved</div>
     </div>
   );
 };
@@ -143,7 +150,6 @@ export default function Page1() {
           <button>Learn More</button>
         </div>
         <Footer />
-        
       </div>
     </>
   );
