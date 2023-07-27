@@ -17,3 +17,9 @@ a {
 * {
   box-sizing: border-box;
 }
+.primary {
+  @apply bg-black text-white rounded-md p-2 m-2 ml-2 hover:bg-gray-800 hover:underline;
+}
+.secondary {
+  @apply bg-gray-800 text-white rounded-md p-2 m-2 ml-2 underline hover:bg-black;
+}

@@ -1,14 +1,14 @@
 const Section1 = ({ blubs }) => {
   return (
-    <div>
-      <div>
+    <div className="bg-blue-600 p-3">
+      <div className="flex grid grid-cols-3 justify-around w-full">
         {blubs &&
           blubs.map((item) => {
             return (
-              <>
-                <div>{item.title}</div>
+              <div className="grid-cols-1">
+                <div className="text-2xl font-bold">{item.title}</div>
                 <div>{item.subtitle}</div>
-              </>
+              </div>
             );
           })}
       </div>
@@ -17,15 +17,15 @@ const Section1 = ({ blubs }) => {
 };
 const Section2 = ({ blubs }) => {
   return (
-    <div>
-      <div>
+    <div className="p-3">
+      <div className="flex grid grid-cols-2 justify-around w-full">
         {blubs &&
           blubs.map((item) => {
             return (
-              <>
-                <div>{item.title}</div>
+              <div>
+                <div className="text-2xl font-bold">{item.title}</div>
                 <div>{item.subtitle}</div>
-              </>
+              </div>
             );
           })}
       </div>
@@ -34,15 +34,15 @@ const Section2 = ({ blubs }) => {
 };
 const Section3 = ({ blubs }) => {
   return (
-    <div>
-      <div>
+    <div className="p-3 ">
+      <div className="flex grid grid-cols-3 w-full justify-around ">
         {blubs &&
           blubs.map((item) => {
             return (
-              <>
-                <div>{item.title}</div>
-                <div>{item.author}</div>
-              </>
+              <div className="rounded border p-2 m-2">
+                <div className="text-md font-bold">{item.title}</div>
+                <div className="text-md italic">{item.author}</div>
+              </div>
             );
           })}
       </div>
@@ -65,18 +65,22 @@ const Footer = () => {
     'Resources',
   ];
   return (
-    <div className="footer">
-      {links &&
-        links.map((item) => {
-          return <div>{item}</div>;
-        })}
-      <div>
+    <div className="bg-black text-white p-5">
+      <div className="flex grid grid-cols-3 justify-between">
+        {links &&
+          links.map((item) => {
+            return <div>{item}</div>;
+          })}
+      </div>
+      <div className="flex justify-between align-center text-center m-2">
         <span>Twitter</span>
         <span>Instagram</span>
         <span>Facebook</span>
         <span>Youtube</span>
       </div>
-      <div>2023 EduHub,All rights reserved</div>
+      <div className="text-center m-5">
+        <div>2023 EduHub,All rights reserved</div>
+      </div>
     </div>
   );
 };
@@ -122,35 +126,35 @@ export default function Page1() {
   ];
 
   return (
-    <>
-      <div>
-        <div>
+    <div className="bg-blue-500 container h-50">
+      <div className="p-5 h-50 min-h-full">
+        <div className="text-right">
           <span>2023</span>
         </div>
-        <h1>EduHub</h1>
-        <p>
+        <h1 className="text-8xl font-bold mt-3 mb-3">EduHub</h1>
+        <p className="m-2">
           Welcome to EduHub, where your thirst for knowledge meets innovation!
           Our learning course platform will leave you craving more, from
           engaging video lectures to collaborative group projects that enhance
           learning.
         </p>
-        <button>Start Exploring</button>
+        <button className="primary">Start Exploring</button>
       </div>
       <Section1 blubs={blubs} />
       <Section2 blubs={blubs1} />
       <Section3 blubs={blubs2} />
-      <div>
-        <h1>
+      <div className="bg-blue-400 p-5">
+        <h1 className="m-2 text-3xl">
           Don’t just stand on the sidelines. Immerse yourself in the thrilling
           world of EduHub and unlock your true potential!
         </h1>
 
         <div>
-          <button>Get Started</button>
-          <button>Learn More</button>
+          <button className="secondary">Get Started</button>
+          <button className="primary">Learn More</button>
         </div>
-        <Footer />
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
